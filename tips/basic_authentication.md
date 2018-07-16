@@ -1,6 +1,6 @@
 # Basic Authentication with Vapor ![][image-1]
 
-For the login, we can use the Basic Authentication protocol (RFC 7617)
+To manage login, you can use the Basic Authentication protocol (RFC 7617) which is supported by Vapor 3 by default
 
 ## Principle
 
@@ -24,11 +24,9 @@ and you submit it in your HTTP Header like so:
 
 ## How to implement using Vapor framework
 
-_(for full details, you can refer to "Server Side Swift with Vapor" ebook, section III, chapter 18)_
-
 ### Setup
  
-You need to add the `Authentication` package in your SPM config (`github: vapor/auth`)
+First, you need to add the `Authentication` package in your SPM config (`github: vapor/auth`)
 
 ```swift
 .package(url: "https://github.com/vapor/auth.git",
@@ -61,7 +59,8 @@ let basicAuthMiddleware =
 let guardAuthMiddleware = User.guardAuthMiddleware()
 ```
 
-*Note:* the basic auth middleware will using **BCrypt** hashing to verify the password
+*Note:* the basic auth middleware will using **BCrypt** hashing to verify the password.
+These lines can be added directly next to your routes definitions.
 
 Then you need to create a group of routes managed by those two middlewares:
 
@@ -69,7 +68,7 @@ Then you need to create a group of routes managed by those two middlewares:
 let protectedRoutes = router.grouped(
   basicAuthMiddleware,
   guardAuthMiddleware)
-// you can now use protectedRoutes to manage protected routes with basic Auth
+// you can now use protectedRoutes to manage your routes that require authentication with basic Auth
 protectedRoutes.post("login", use: loginHandler)
 ```
 
@@ -85,5 +84,10 @@ user.password = try BCrypt.hash(user.password)
 user.save(on: dbconnection)
 ```
 
+## References
 
-[image-1]:	img/vapor3_20.jpg
+* [Server Side Swift with Vapor" ebook, section III, chapter 18)][1]
+
+[1]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
+
+[image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"

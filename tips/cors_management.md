@@ -1,6 +1,6 @@
 # CORS Management ![][image-1]
 
-To allow React frontend to access the backend API, we need to add CORS middleware in the vapor `configure.swift` file:
+To allow a React (or similiar) frontend to access the backend API, you need to setup a CORS middleware in your vapor `configure.swift` file:
 
 ```swift
 let corsMiddleware = CORSMiddleware(
@@ -24,6 +24,11 @@ let corsMiddleware = CORSMiddleware(
 middlewares.use(corsMiddleware)
 ```
 
-**Note:** This is a copy/paste example found on the web. Maybe we'll need to adjust the parameters. That said, it has been tested and this example allows a React website to access the vapor API routes.
+**Note:** This is the default parameters expanded so you can see them without digging into the code. Maybe you'll need to adjust the parameters. That said, it has been tested and this example allows a default React website to access the vapor API routes.
 
-[image-1]:	img/vapor3_20.jpg
+## References
+- [CORSMiddleware.swift on Github][1]
+
+[1]:	https://github.com/vapor/vapor/blob/master/Sources/Vapor/Middleware/CORSMiddleware.swift
+
+[image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"

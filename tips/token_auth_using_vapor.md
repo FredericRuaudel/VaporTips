@@ -1,17 +1,16 @@
 # Token Authentication with Vapor ![][image-1]
 
-For limiting access to all API endpoints we can use some AccessToken authentication
+For limiting access to your sensitive API endpoints you can use **AccessToken** authentication
 
 ## Principle
 
-you login on a `/login` endpoint first with [Basic Authentication][1] and this endpoint returns you an access token that you can use with other endpoints using simple HTTP Headers like this:
+You log in on a `/login` endpoint first using [Basic Authentication][1] and this endpoint returns you an access token that you can use with other endpoints using simple HTTP Headers like this:
 
 ```html
 Authorization: Bearer XXXXXX-TOKEN-XXXXXXX
 ```
 
 ## How to implement using Vapor framework
-_(for full details, you can refer to "Server Side Swift with Vapor" ebook, section III, chapter 18)_
 
 ### Setup
 
@@ -72,16 +71,9 @@ extension Token: BearerAuthenticatable {
 }
 ```
 
-The first one will setup the match between your `User` model and the `userID` properties of your `Token` model.
+The first one will setup the correspondance between your `User` model and the `userID` properties of your `Token` model.
 
-The second will tell the middleware which is the token property of your `Token` model
-
-### Retrieving an authenticated user
-In your authenticated routes, when you need to retrieve the user associated with the given token, you can simply add the following code:
-
-```swift
-let user = try request.requireAuthenticated(User.self)
-```
+The second will tell the middleware which property of your `Token` model is storing the access token.
 
 ### Routing
 In your routing code, you need to create two middlewares that will be responsible for intercepting each request and check if it is correctly authorized:
@@ -98,11 +90,22 @@ Then you need to create a group of routes managed by those two middlewares:
 let protectedRoutes = router.grouped(
   tokenAuthMiddleware,
   guardAuthMiddleware)
-// you can now use protectedRoutes to manage protected routes with token Auth
+// you can now use protectedRoutes to manage your routes that require authentication with token Auth
 protectedRoutes.post("api/endpoint", use: apiEndpointHandler)
 ```
 
+### Retrieving an authenticated user
+In your authenticated routes, when you need to retrieve the user associated with the given token, you can simply add the following code:
+
+```swift
+let user = try request.requireAuthenticated(User.self)
+```
+
+## References
+
+* [Server Side Swift with Vapor" ebook, section III, chapter 18)][2]
 
 [1]:	basic_authentication.md
+[2]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
 
-[image-1]:	img/vapor3_20.jpg
+[image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"
