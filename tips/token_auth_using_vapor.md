@@ -26,6 +26,20 @@ dependencies: [...,
 			   "Authentication"]
 ```
 
+### Configuration
+
+In your `configure.swift` file, add the following line:
+
+```swift
+try services.register(AuthenticationProvider())
+```
+
+And in any file where you add some auth code, don't forget to import the module:
+
+```swift
+import Authentication
+```
+
 ### Model
 You need to create a `Token` model first:
 

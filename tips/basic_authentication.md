@@ -38,6 +38,20 @@ dependencies: [...,
 			   "Authentication"]
 ```
 
+### Configuration
+
+In your `configure.swift` file, add the following line:
+
+```swift
+try services.register(AuthenticationProvider())
+```
+
+And in any file where you add some auth code, don't forget to import the module:
+
+```swift
+import Authentication
+```
+
 ### Model Conformance
 
 Assuming you have a `User` model object with at least two properties `username` and `password`, you need to make this model conforms to `BasicAuthenticatable` protocol by defining the keypath of the two properties:
