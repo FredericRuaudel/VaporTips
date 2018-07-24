@@ -8,11 +8,12 @@ You'll create a model like this with an optional parent relationship toward your
 struct User : PostgreSQLModel {
 	var id: Int?
 	var name: String
-	var petId: MigrationEndpointEntity.ID?
+	var petId: Pet.ID?
 	var pet: Parent<User, Pet>? {
 		return parent(\User.petId)
 	}
-} 
+}
+
 struct Pet: PostgreSQLModel {
 	var id: Int?
 	var name: String
