@@ -9,17 +9,21 @@ I'll also try to define which version of Swift or Vapor is required for each tip
 ## Testing
 - [How to easily maintain your Linux tests][1] _Swift 4.1_
 
+## Futures
+- [How to convert a Future\<T\>? into a Future\<T?\>?][2]
+
 ## Authentication
-- [Adding basic authentication support][2] ![][image-2]
-- [Adding access token authentication support][3] ![][image-3]
+- [Adding basic authentication support][3] ![][image-2]
+- [Adding access token authentication support][4] ![][image-3]
 
 ## Frontend
-- [Adding CORS support to give access to frontend like React websites][4] ![][image-4]
+- [Adding CORS support to give access to frontend like React websites][5] ![][image-4]
 
 [1]:	tips/autogenerate_linuxmain_for_tests.md
-[2]:	tips/basic_authentication.md
-[3]:	tips/token_auth_using_vapor.md
-[4]:	tips/cors_management.md
+[2]:	tips/optional_future_to_future_optional.md
+[3]:	tips/basic_authentication.md
+[4]:	tips/token_auth_using_vapor.md
+[5]:	tips/cors_management.md
 
 [image-1]:	tips/img/vapor3_20.jpg "compatible with Vapor 3"
 [image-2]:	tips/img/vapor3_20.jpg "compatible with Vapor 3"
