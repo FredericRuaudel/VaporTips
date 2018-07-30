@@ -1,5 +1,7 @@
 # How to auto-Timestamp your fluent models ![][image-1]
 
+[back to index][1]
+
 It is common to add timestamps in your database table schema like `createdAt` and `updatedAt` to track modifications in your data. But dealing with it each time you need to create a model or updating it, could be cumbersome.
 
 Using **Vapor 3** and **Fluent**, this is very easy to add those fields and ask **Fluent** to automatically manage them for you! 🎉
@@ -89,6 +91,11 @@ Once you see the error, click on it and hit the `Fix` button, or simply hit `Ctr
 ![][image-4]
 
 If you prefer this style of protocol conformance, you'll have to create the properties yourself in the main definition.
+
+[back to index][2]
+
+[1]:	../README.md
+[2]:	../README.md
 
 [image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"
 [image-2]:	img/Autotimestampable-fixit-error.png

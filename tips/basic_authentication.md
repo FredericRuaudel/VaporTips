@@ -1,5 +1,7 @@
 # Basic Authentication with Vapor ![][image-1]
 
+[back to index][1]
+
 To manage login, you can use the Basic Authentication protocol (RFC 7617) which is supported by Vapor 3 by default
 
 ## Principle
@@ -100,8 +102,12 @@ user.save(on: dbconnection)
 
 ## References
 
-* [Server Side Swift with Vapor" ebook, section III, chapter 18)][1]
+* [Server Side Swift with Vapor" ebook, section III, chapter 18)][2]
 
-[1]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
+[back to index][3]
+
+[1]:	../README.md
+[2]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
+[3]:	../README.md
 
 [image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"

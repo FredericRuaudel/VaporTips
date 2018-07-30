@@ -1,5 +1,7 @@
 # How to easily maintain your Linux tests
 
+[back to index][1]
+
 ## The problem
 When testing on Linux platforms, the XCTest framework doesn't have access to the Objective-C runtime to analyse your test suites code and find all the test methods. 
 So you'll usually find in guides about testing server side code on Linux, that you have to maintain a bunch of `allTests` static vars in all your test suite classes alongside a file named `LinuxMain.swift` that must gather them all in a `XCTMain` call like this:
@@ -81,6 +83,10 @@ docker build --tag "linux_tests" . && docker run --rm "linux_tests"
 **⚠️ Caution:** This script will first remove all `XCTestManifests.swift` and `LinuxMain.swift` files that are present in the `Tests` folder and subfolders from the path you run this script. Be sure to never edit them manually!
 
 ## References
-- [ Keeping XCTest in sync on Linux by Ole Begemann ][1]
+- [ Keeping XCTest in sync on Linux by Ole Begemann ][2]
 
-[1]:	https://oleb.net/blog/2017/03/keeping-xctest-in-sync/
+[back to index][3]
+
+[1]:	../README.md
+[2]:	https://oleb.net/blog/2017/03/keeping-xctest-in-sync/
+[3]:	../README.md

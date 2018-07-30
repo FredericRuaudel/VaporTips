@@ -1,10 +1,12 @@
 # Token Authentication with Vapor ![][image-1]
 
+[back to index][1]
+
 For limiting access to your sensitive API endpoints you can use **AccessToken** authentication
 
 ## Principle
 
-You log in on a `/login` endpoint first using [Basic Authentication][1] and this endpoint returns you an access token that you can use with other endpoints using simple HTTP Headers like this:
+You log in on a `/login` endpoint first using [Basic Authentication][2] and this endpoint returns you an access token that you can use with other endpoints using simple HTTP Headers like this:
 
 ```html
 Authorization: Bearer XXXXXX-TOKEN-XXXXXXX
@@ -117,9 +119,13 @@ let user = try request.requireAuthenticated(User.self)
 
 ## References
 
-* [Server Side Swift with Vapor" ebook, section III, chapter 18)][2]
+* [Server Side Swift with Vapor" ebook, section III, chapter 18)][3]
 
-[1]:	basic_authentication.md
-[2]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
+[back to index][4]
+
+[1]:	../README.md
+[2]:	basic_authentication.md
+[3]:	https://store.raywenderlich.com/products/server-side-swift-with-vapor
+[4]:	../README.md
 
 [image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"

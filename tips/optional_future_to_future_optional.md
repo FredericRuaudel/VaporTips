@@ -1,5 +1,7 @@
 # Converting Optional Future into Future of Optional
 
+[back to index][1]
+
 ## The problem
 
 Let say you have a `User` model that can have a pet or not.
@@ -68,3 +70,8 @@ func getPet(for user: User, on connection: DatabaseConnectable) -> Future<Pet?> 
 ```
 
 That's all folks! 🎉
+
+[back to index][2]
+
+[1]:	../README.md
+[2]:	../README.md
