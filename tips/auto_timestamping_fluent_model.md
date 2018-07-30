@@ -1,4 +1,4 @@
-# How to auto-Timestamp your fluent models ![][image-1]
+# How to auto-timestamp your Fluent models ![][image-1]
 
 [back to index][1]
 
