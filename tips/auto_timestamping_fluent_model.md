@@ -92,10 +92,15 @@ Once you see the error, click on it and hit the `Fix` button, or simply hit `Ctr
 
 If you prefer this style of protocol conformance, you'll have to create the properties yourself in the main definition.
 
-[back to index][2]
+## References
+
+[Fluent Model definition on GitHub][2]
+
+[back to index][3]
 
 [1]:	../README.md
-[2]:	../README.md
+[2]:	https://github.com/vapor/fluent/blob/c373060e09940dc3aa0d54751f14e12de8545251/Sources/Fluent/Model/Model.swift#L48
+[3]:	../README.md
 
 [image-1]:	img/vapor3_20.jpg "compatible with Vapor 3"
 [image-2]:	img/Autotimestampable-fixit-error.png
